@@ -20,3 +20,15 @@
 ## 图的遍历：TraversingGraph.cpp
   * DFS
   * BFS
+
+## 链表
+  * 一维数组实现的链表：SeqList.h SeqList.cpp
+  * 结点实现的链表：LinkList.h LinkList.cpp
+
+## 栈
+  * 一维数组实现的栈：SeqStack.h SeqStack.cpp
+  * 结点实现的栈：LinkStack.h LinkStack.cpp
+
+## 队列
+  * 一维数组实现的队列：CirQueue.h CirQueue.cpp
+  * 结点实现的队列：LinkQueue.h LinkQueue.cpp
