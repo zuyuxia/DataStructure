@@ -21,7 +21,7 @@ public:
 	void PrintList();
 private:
 	static const int max_size = 100;
-	int length;
+	int length_;
 	T data[max_size];
 };
 

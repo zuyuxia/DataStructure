@@ -1,59 +1,59 @@
 #include "LinkStack.h"
 
 template<typename T>
-LinkStack<T>::LinkStack() :top(nullptr), count(0) {
+LinkStack<T>::LinkStack() :top_(nullptr), count_(0) {
 	
 }
 
 template<typename T>
 LinkStack<T>::~LinkStack() {
 	Node<T>* p = nullptr;
-	while (top) {
-		p = top;
-		top = top->next;
+	while (top_) {
+		p = top_;
+		top_ = top_->next;
 		delete p;
 	}
 	/*
 	Node<T>* p = nullptr;
-	for (int i = 0; i != count; ++i) {
-		p = top;
-		top = top->next;
+	for (int i = 0; i != count_; ++i) {
+		p = top_;
+		top_ = top_->next;
 		delete p;
 	}
-	count = 0;
-	top = nullptr;
+	count_ = 0;
+	top_ = nullptr;
 	*/
 }
 
 template<typename T>
-void LinkStack<T>::push(T data) {
+void LinkStack<T>::Push(T data) {
 	Node<T>* p = new Node<T>;
 	p->data = data;
-	p->next = top;
-	top = p;
-	++count;
+	p->next = top_;
+	top_ = p;
+	++count_;
 }
 
 template<typename T>
-T LinkStack<T>::pop() {
+T LinkStack<T>::Pop() {
 	T data;
 	Node<T>* p;
-	data = top->data;
-	p = top;
-	top = top->next;
+	data = top_->data;
+	p = top_;
+	top_ = top_->next;
 	delete p;
-	--count;
+	--count_;
 	return data;
 }
 
 template<typename T>
 T LinkStack<T>::GetTop() {
-	return top->data;
+	return top_->data;
 }
 
 template<typename T>
 bool LinkStack<T>::Empty() {
-	if (count == 0)
+	if (count_ == 0)
 		return true;
 	return false;
 }

@@ -13,13 +13,13 @@ public:
 	LinkStack();
 	~LinkStack();
 
-	void push(T data);
-	T pop();
+	void Push(T data);
+	T Pop();
 	T GetTop();
 	bool Empty();
 private:
-	Node<T>* top;
-	int count;
+	Node<T>* top_;
+	int count_;
 };
 
 #endif

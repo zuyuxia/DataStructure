@@ -2,8 +2,8 @@
 
 template<typename T>
 CirQueue<T>::CirQueue() {
-	front = 0;
-	rear = 0;
+	front_ = 0;
+	rear_ = 0;
 }
 
 template<typename T>
@@ -11,51 +11,51 @@ CirQueue<T>::~CirQueue() {
 }
 
 template<typename T>
-void CirQueue<T>::enQueue(T element) {
+void CirQueue<T>::EnQueue(T element) {
 	if (full()) {
 		std::cout << "Queue is full\n";
 	}
 	else {
-		data[rear] = element;
-		rear = (rear + 1) % maxSize;
+		data[rear_] = element;
+		rear_ = (rear_ + 1) % max_size;
 	}
 }
 
 template<typename T>
-void CirQueue<T>::deQueue() {
+void CirQueue<T>::DeQueue() {
 	if (empty()) {
 		std::cout << "Queue is empty\n";
 	}
 	else {
-		front = (front + 1) % maxSize;
+		front_ = (front_ + 1) % max_size;
 	}
 }
 
 template<typename T>
-T CirQueue<T>::getFront() {
-	return data[front];
+T CirQueue<T>::GetFront() {
+	return data[front_];
 }
 
 template<typename T>
-bool CirQueue<T>::empty() {
-	if (front == rear)
+bool CirQueue<T>::Empty() {
+	if (front_ == rear_)
 		return true;
 	return false;
 }
 
 template<typename T>
-bool CirQueue<T>::full() {
-	if (((rear + 1) % maxSize) == front)
+bool CirQueue<T>::Full() {
+	if (((rear_ + 1) % max_size) == front_)
 		return true;
 	return false;
 }
 
 template<typename T>
-int CirQueue<T>::size() {
+int CirQueue<T>::Size() {
 	if (empty())
 		return 0;
 	else if (full())
-		return maxSize - 1;
+		return max_size - 1;
 	else
-		return (rear - front + maxSize) % maxSize;
+		return (rear_ - front_ + max_size) % max_size;
 }

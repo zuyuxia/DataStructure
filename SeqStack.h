@@ -1,7 +1,7 @@
 #ifndef SEQSTACK_H
 #define SEQSTACK_H
 
-const int MaxSize = 100;
+
 
 template<typename T>
 class SeqStack {
@@ -9,14 +9,15 @@ public:
 	SeqStack();
 	~SeqStack() {}
 
-	void push(T data);
-	T pop();
+	void Push(T data);
+	T Pop();
 	T GetTop();
 	bool Empty();
 	bool Full();
 private:
-	T stack[MaxSize];
-	int top;
+	static const int max_size = 100;
+	T stack[max_size];
+	int top_;
 };
 
 #endif

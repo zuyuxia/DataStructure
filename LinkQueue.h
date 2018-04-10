@@ -13,13 +13,13 @@ public:
 	LinkQueue();
 	~LinkQueue();
 
-	void enQueue(T element);
-	void deQueue();
-	T getFront();
-	bool empty();
+	void EnQueue(T element);
+	void DeQueue();
+	T GetFront();
+	bool Empty();
 private:
-	Node<T>* front;
-	Node<T>* rear;
+	Node<T>* front_;
+	Node<T>* rear_;
 };
 
 #endif

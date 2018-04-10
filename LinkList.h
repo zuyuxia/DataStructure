@@ -25,7 +25,7 @@ public:
 	Node<T>* GetFirst();
 	void SetFirst();
 private:
-	Node<T> *first = nullptr;
+	Node<T> *first_ = nullptr;
 };
 
 #endif

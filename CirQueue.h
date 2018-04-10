@@ -1,24 +1,23 @@
 #ifndef CIRQUEUE_H
 #define CIRQUEUE_H
 
-const int maxSize = 100;
-
 template<typename T>
 class CirQueue {
 public:
 	CirQueue();
 	~CirQueue();
 
-	void enQueue(T element);
-	void deQueue();
-	T getFront();
-	bool empty();
-	bool full();
-	int size();
+	void EnQueue(T element);
+	void DeQueue();
+	T GetFront();
+	bool Empty();
+	bool Full();
+	int Size();
 private:
-	T data[maxSize];
-	int front;
-	int rear;
+	static const int max_size = 100;
+	T data[max_size];
+	int front_;
+	int rear_;
 };
 
 #endif

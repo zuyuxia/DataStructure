@@ -2,45 +2,45 @@
 
 template<typename T>
 LinkQueue<T>::LinkQueue() {
-	front = new Node<T>;
-	rear = front;
+	front_ = new Node<T>;
+	rear_ = front_;
 }
 
 template<typename T>
 LinkQueue<T>::~LinkQueue() {
 	Node<T>* p;
-	while (front != rear) {
-		p = front;
-		front = p->next;
+	while (front_ != rear_) {
+		p = front_;
+		front_ = p->next;
 		delete p;
 	}
-	delete rear;
+	delete rear_;
 }
 
 template<typename T>
-void LinkQueue<T>::enQueue(T element) {
+void LinkQueue<T>::EnQueue(T element) {
 	Node<T>* s = new Node<T>;
 	s->data = element;
 	s->next = nullptr;
-	rear->next = s;
-	rear = s;
+	rear_->next = s;
+	rear_ = s;
 }
 
 template<typename T>
-void LinkQueue<T>::deQueue() {
-	Node<T>* p = front->next;
-	front->next = p->next;
+void LinkQueue<T>::DeQueue() {
+	Node<T>* p = front_->next;
+	front_->next = p->next;
 	delete p;
 }
 
 template<typename T>
-T LinkQueue<T>::getFront() {
-	return front->next->data;
+T LinkQueue<T>::GetFront() {
+	return front_->next->data;
 }
 
 template<typename T>
-bool LinkQueue<T>::empty() {
-	if (front == rear)
+bool LinkQueue<T>::Empty() {
+	if (front_ == rear_)
 		return true;
 	return false;
 }
