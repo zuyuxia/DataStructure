@@ -103,11 +103,11 @@ void HeapSort(vector<int> &nums){
 void HeapAddjust(vector<int> &nums, int parentIndex, int length){
 	int temp = nums[parentIndex];
 	int leftChild = parentIndex*2 + 1;
-	for(;leftChild < length - 1;leftChild = leftChild*2 + 1){
-		if(leftChild + 1 < length - 1 && nums[leftChild] < nums[leftChild+1])
+	for(;leftChild <= length - 1;leftChild = leftChild*2 + 1){
+		if(leftChild + 1 <= length - 1 && nums[leftChild] < nums[leftChild+1])
 			++leftChild;
 
-		if(temp == nums[leftChild])
+		if(temp >= nums[leftChild])
 			break;
 
 		nums[parentIndex] = nums[leftChild];
