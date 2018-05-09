@@ -37,24 +37,24 @@ void PrintBinaryTreeByLevel(Node* root) {
 		return;
 	queue<Node*> q;
 	q.push(root);
-	Node* temp = nullptr;
+	Node* node = nullptr;
 
 	Node* last = root;
 	Node* nlast = nullptr;
 	while (!q.empty()) {
-		temp = q.front();
+		node = q.front();
 		q.pop();
-		cout << temp->data << "\t";
+		cout << node->data << "\t";
 
-		if (temp->lchild != nullptr) {
-			q.push(temp->lchild);
-			nlast = temp->lchild;
+		if (node->lchild != nullptr) {
+			q.push(node->lchild);
+			nlast = node->lchild;
 		}
-		if (temp->rchild != nullptr) {
-			q.push(temp->rchild);
-			nlast = temp->rchild;
+		if (node->rchild != nullptr) {
+			q.push(node->rchild);
+			nlast = node->rchild;
 		}
-		if (temp == last && !q.empty()) {
+		if (node == last && !q.empty()) {
 			cout << "\n";
 			last = nlast;
 		}
