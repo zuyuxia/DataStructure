@@ -12,7 +12,7 @@
 //			1
 //			2
 //			3
-//		3、正常二叉树(string seq = "1!2!3!#!4!5!#!")，输出为：
+//		3、正常二叉树(string seq = "1!2!3!#!4!5!#!#!#!#!#!")，输出为：
 //			1
 //			2  3
 //			4  5
@@ -119,7 +119,7 @@ int main() {
 	// string seq = "1!2!#!3!#!";
 
 	// 测试用例3：正常的二叉树
-	string seq = "1!2!3!#!4!5!#!";
+	string seq = "1!2!3!#!4!5!#!#!#!#!#!";
 	vector<Node*> result(seq.size() / 2, nullptr);
 	CreateBinaryTree(seq, result);
 
