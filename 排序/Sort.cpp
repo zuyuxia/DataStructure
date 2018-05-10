@@ -85,35 +85,32 @@ void Merge(vector<int> &nums, int begin, int middle, int end, vector<int> &temp)
 }
 
 //堆排序
-void HeapSort(vector<int> &nums){
-	if(nums.empty() || nums.size() == 1)
-		return;
-	
-	//将待排序数组构成成一个堆
-	for(int i = nums.size()/2 - 1;i >= 0; --i)
-		HeapAddjust(nums,i,nums.size());
-			
-	for(int i = 0; i < nums.size() - 1;++i){
-		swap(nums[i],nums[nums.size()-1-i]);
-		HeapAddjust(nums,0,nums.size()-1-i);
-	}
-		
-}
-		
-void HeapAddjust(vector<int> &nums, int parentIndex, int length){
-	int temp = nums[parentIndex];
-	int leftChild = parentIndex*2 + 1;
-	for(;leftChild <= length - 1;leftChild = leftChild*2 + 1){
-		if(leftChild + 1 <= length - 1 && nums[leftChild] < nums[leftChild+1])
-			++leftChild;
+void HeapAdjust(vector<int> &nums, int begin, int end) {
+	int root_value = nums[begin];
 
-		if(temp >= nums[leftChild])
+	for (int j = 2 * begin + 1; j <= end; j = j * 2 + 1) {
+		if (j < end && nums[j] < nums[j + 1])
+			++j;
+		if (root_value >= nums[j])
 			break;
-
-		nums[parentIndex] = nums[leftChild];
-		parentIndex = leftChild;
+		nums[begin] = nums[j];
+		begin = j;
 	}
-	nums[parentIndex] = temp;
+	nums[begin] = root_value;
+}
+
+// 堆排序
+void HeapSort(vector<int> &nums, int array_length) {
+	if (nums.empty() || array_length == 1)
+		return;
+
+	for (int i = array_length / 2 - 1; i >= 0; --i)
+		HeapAdjust(nums, i, array_length - 1);
+
+	for (int i = array_length - 1; i > 0; --i) {
+		swap(nums[0], nums[i]);
+		HeapAdjust(nums, 0, i - 1);
+	}
 }
 
 //桶排序
