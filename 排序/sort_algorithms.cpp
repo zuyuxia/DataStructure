@@ -99,7 +99,6 @@ void HeapAdjust(vector<int> &nums, int begin, int end) {
 	nums[begin] = root_value;
 }
 
-// 堆排序
 void HeapSort(vector<int> &nums, int array_length) {
 	if (nums.empty() || array_length == 1)
 		return;
