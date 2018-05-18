@@ -20,6 +20,10 @@
   * **小范围排序**：sort\_with\_small\_range.cpp
   * **判断数组中是否有重复值**：judge\_duplicate\_value.cpp
   * **合并有序数组**：merge\_ordered\_arrays.cpp
+  * **荷兰国旗问题**：dutch\_national\_flag\_problem.cpp
+  * **有序矩阵中查找**：search\_in\_ordered\_matrix.cpp
+  * **需要排序的最短子数组**：length\_of\_shortest\_subarray.cpp
+  * **相邻两数的最大差值**：max\_difference\_between\_adjacent\_numbers.cpp
 
 ## 二叉树
 ### 二叉树遍历：BinaryTree.cpp
