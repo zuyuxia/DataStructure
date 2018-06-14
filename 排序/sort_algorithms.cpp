@@ -32,19 +32,18 @@ void QuickSort(vector<int> &nums, int begin, int end){
 	QuickSort(nums, pivot + 1, end);
 }
 		
-int Partiton(vector<int> &nums, int begin, int end){
-	int i = begin + 1, j = end;
+int Partition(vector<int> &nums, int begin, int end){
 	int mark = nums[begin];
-	while(i < j){
-		while(i < j && nums[j] > mark)
-			--j;
-		while(i < j && nums[i] < mark)
-			++i;
-		if(i < j)
-			swap(nums[i],nums[j]);
+	while(begin < end){
+		while(begin < end && nums[end] > mark)
+			--end;
+		nums[begin] = nums[end];
+		while(begin < end && nums[begin] < mark)
+			++begin;
+		nums[end] = nums[begin];
 	}
-	swap(nums[i],nums[begin]);
-	return i;
+	nums[begin] = mark;
+	return begin;
 }
 
 //归并排序
