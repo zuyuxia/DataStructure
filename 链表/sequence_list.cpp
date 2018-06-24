@@ -1,4 +1,4 @@
-#include"SeqList.h"
+#include"sequence_list.h"
 
 using std::cout;
 using std::string;
